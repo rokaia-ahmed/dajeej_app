@@ -5,9 +5,10 @@ import 'package:dajeej/views/login/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../core/utils/app_colors.dart';
 import 'custom_list_tile.dart';
+import 'custom_toggle_widget.dart';
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({Key? key}) : super(key: key);
+   const CustomDrawer({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -40,20 +41,19 @@ class CustomDrawer extends StatelessWidget {
                   ),
                 ),
                 subtitle: InkWell(
-                  onTap: (){
+                  onTap: () {
                     AppNavigator.push(
-                        context: context,
-                        screen: LoginScreen());
+                        context: context, screen: const LoginScreen());
                   },
                   child: Row(
                     children: const [
-                       Text(
+                      Text(
                         'Login',
                         style: TextStyle(
                           color: AppColors.primary,
                         ),
                       ),
-                       Text(
+                      Text(
                         ' / ',
                         style: TextStyle(
                           color: AppColors.primary,
@@ -73,76 +73,71 @@ class CustomDrawer extends StatelessWidget {
           ),
           CustomListTile(
             icon: Icons.home_outlined,
-            text:'Home' ,
-            onTap: (){
-              AppNavigator.push(context: context,
-                  screen:  HomeScreen());
+            text: 'Home',
+            onTap: () {
+              AppNavigator.push(context: context, screen: HomeScreen());
             },
           ),
           CustomListTile(
             icon: Icons.grid_view,
-            text:'Categories' ,
-            onTap: (){},
+            text: 'Categories',
+            onTap: () {},
           ),
           CustomListTile(
             icon: Icons.store_outlined,
-            text:'Shops' ,
-            onTap: (){},
+            text: 'Shops',
+            onTap: () {},
           ),
           CustomListTile(
             icon: Icons.rocket_outlined,
-            text:'Small Projects' ,
-            onTap: (){},
+            text: 'Small Projects',
+            onTap: () {},
           ),
           CustomListTile(
             icon: Icons.favorite_border,
-            text:'My Favorites' ,
-            onTap: (){},
+            text: 'My Favorites',
+            onTap: () {},
           ),
-          SizedBox(height: context.height*0.025),
+          SizedBox(height: context.height * 0.025),
           Container(
-            margin:const EdgeInsets.symmetric(horizontal: 15),
+            margin: const EdgeInsets.symmetric(horizontal: 15),
             color: Colors.blue.shade300,
             height: 2,
             width: double.infinity,
           ),
           CustomListTile(
             icon: Icons.receipt_long,
-            text:'Terms & Conditions' ,
-            onTap: (){},
+            text: 'Terms & Conditions',
+            onTap: () {},
           ),
           CustomListTile(
             icon: Icons.phone,
-            text:'Contact Us' ,
-            onTap: (){},
+            text: 'Contact Us',
+            onTap: () {},
           ),
           CustomListTile(
             icon: Icons.info_outline,
-            text:'About App' ,
-            onTap: (){},
+            text: 'About App',
+            onTap: () {},
           ),
           CustomListTile(
             icon: Icons.security,
-            text:'Privacy Policy' ,
-            onTap: (){},
+            text: 'Privacy Policy',
+            onTap: () {},
           ),
           CustomListTile(
             icon: Icons.language,
-            text:'العربية ' ,
-            onTap: (){},
+            text: 'العربية ',
+            onTap: () {},
           ),
-          SizedBox(height: context.height*0.025),
+          SizedBox(height: context.height * 0.025),
           Container(
-            margin:const EdgeInsets.symmetric(horizontal: 15),
+            margin: const EdgeInsets.symmetric(horizontal: 15),
             color: Colors.blue.shade300,
             height: 2,
             width: double.infinity,
           ),
-          CustomListTile(
-            icon: Icons.contrast,
-            text:'Saudi' ,
-            onTap: (){},
-          ),
+          const CustomToggleWidget(),
         ],
       ),
     );
